@@ -7,6 +7,7 @@ androidx-lifecycle = "2.6.1"
 compose-bom = "2023.03.00"
 compose-compiler = "1.5.3"
 core-ktx = "1.10.1"
+hilt = "2.44"
 jvm-target = "1.8"
 junit = "4.13.2"
 kotlin = "1.9.10"
@@ -32,10 +33,13 @@ androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", 
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
 androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-application" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
