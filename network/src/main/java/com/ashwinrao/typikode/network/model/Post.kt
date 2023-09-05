@@ -1,4 +1,4 @@
-package com.ashwinrao.typikode.data.model
+package com.ashwinrao.typikode.network.model
 
 
 import kotlinx.serialization.SerialName

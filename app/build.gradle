@@ -1,9 +1,9 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
-    id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.plugin.serialization'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -53,6 +53,7 @@ android {
 }
 
 dependencies {
+    api project(':network')
     implementation platform(libs.compose.bom)
 
     implementation libs.androidx.core
@@ -62,12 +63,10 @@ dependencies {
     implementation libs.androidx.compose.ui.graphics
     implementation libs.androidx.compose.ui.tooling.preview
     implementation libs.androidx.compose.material3
+    implementation libs.kotlin.serialization.json
+
     implementation libs.hilt.android
     kapt libs.hilt.compiler
-    implementation libs.kotlin.serialization.json
-    implementation libs.okhttp
-    implementation libs.retrofit
-    implementation libs.retrofit.converter
 
     testImplementation libs.junit
 

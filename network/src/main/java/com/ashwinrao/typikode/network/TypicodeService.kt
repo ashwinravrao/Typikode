@@ -1,10 +1,10 @@
-package com.ashwinrao.typikode.data
+package com.ashwinrao.typikode.network
 
-import com.ashwinrao.typikode.data.model.Post
+import com.ashwinrao.typikode.network.model.Post
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
 
-interface TypicodeAPI {
+interface TypicodeService {
 
     @GET("posts")
     fun fetchPosts(): Flow<List<Post>>
