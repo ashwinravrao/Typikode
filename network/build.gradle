@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.jvm.target.get()
     }
+    kapt {
+        correctErrorTypes true
+    }
 }
 
 dependencies {
@@ -39,6 +42,7 @@ dependencies {
     implementation libs.retrofit.converter
 
     implementation libs.hilt.android
+    implementation libs.hilt.gradle
     kapt libs.hilt.compiler
 
     testImplementation libs.junit

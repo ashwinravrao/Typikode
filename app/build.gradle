@@ -66,6 +66,7 @@ dependencies {
     implementation libs.kotlin.serialization.json
 
     implementation libs.hilt.android
+    implementation libs.hilt.gradle
     kapt libs.hilt.compiler
 
     testImplementation libs.junit
