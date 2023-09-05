@@ -1,9 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -65,9 +64,6 @@ dependencies {
     implementation libs.androidx.compose.material3
     implementation libs.androidx.hilt.navigation.compose
     implementation libs.androidx.lifecycle.compose
-    implementation libs.kotlin.serialization.json
-    implementation libs.retrofit
-    implementation libs.retrofit.converter
 
     implementation libs.hilt.android
     implementation libs.hilt.gradle

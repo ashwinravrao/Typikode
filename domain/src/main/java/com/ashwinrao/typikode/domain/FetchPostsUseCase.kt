@@ -8,6 +8,5 @@ import javax.inject.Inject
 class FetchPostsUseCase @Inject constructor(
     private val repository: TypicodeRepository
 ) {
-    suspend operator fun invoke(): Flow<List<Post>> =
-        repository.fetchPosts()
+    operator fun invoke(): Flow<List<Post>> = repository.fetchPosts()
 }
