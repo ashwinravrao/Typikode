@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface TypicodeService {
 
     @GET("posts")
-    fun fetchPosts(): Flow<List<Post>>
+    suspend fun fetchPosts(): Flow<List<Post>>
 
 }

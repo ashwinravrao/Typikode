@@ -53,7 +53,7 @@ android {
 }
 
 dependencies {
-    api project(':network')
+    api project(':data')
     implementation platform(libs.compose.bom)
 
     implementation libs.androidx.core

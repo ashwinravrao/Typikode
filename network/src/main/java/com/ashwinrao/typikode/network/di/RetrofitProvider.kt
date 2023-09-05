@@ -1,5 +1,6 @@
 package com.ashwinrao.typikode.network.di
 
+import com.ashwinrao.typikode.network.TypicodeService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -26,5 +27,9 @@ class RetrofitProvider {
                     contentType = "application/json".toMediaType()
                 )
             ).build()
+
+    @Provides
+    fun provideTypicodeService(retrofit: Retrofit): TypicodeService =
+        retrofit.create(TypicodeService::class.java)
 
 }
