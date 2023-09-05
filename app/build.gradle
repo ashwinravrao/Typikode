@@ -53,7 +53,7 @@ android {
 }
 
 dependencies {
-    api project(':data')
+    api project(':domain')
     implementation platform(libs.compose.bom)
 
     implementation libs.androidx.core
@@ -63,7 +63,6 @@ dependencies {
     implementation libs.androidx.compose.ui.graphics
     implementation libs.androidx.compose.ui.tooling.preview
     implementation libs.androidx.compose.material3
-    implementation libs.kotlin.serialization.json
 
     implementation libs.hilt.android
     implementation libs.hilt.gradle
