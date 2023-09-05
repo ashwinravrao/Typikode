@@ -5,19 +5,27 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.ashwinrao.typikode.network.model.Post
 import com.ashwinrao.typikode.ui.theme.TypikodeTheme
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,10 +35,37 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    Greeting("Android")
+                    val viewModel: MainViewModel = hiltViewModel()
+                    viewModel.fetchPosts()
+
+                    val posts by viewModel.typicodePosts.collectAsStateWithLifecycle()
+
+                    posts?.let {
+                        PostList(it)
+                    }
                 }
             }
         }
+    }
+}
+
+@Composable
+fun PostList(
+    posts: List<Post>
+) {
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        items(posts.size) { index ->
+            PostRow(posts[index])
+        }
+    }
+}
+
+@Composable
+fun PostRow(
+    post: Post
+) {
+    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+        Text(post.title)
     }
 }
 
