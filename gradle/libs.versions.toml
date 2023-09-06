@@ -5,6 +5,7 @@ androidx-espresso = "3.5.1"
 androidx-hilt-navigation-compose = "1.0.0"
 androidx-junit = "1.1.5"
 androidx-lifecycle = "2.6.1"
+androidx-navigation-compose = "2.7.1"
 compose-bom = "2023.03.00"
 compose-compiler = "1.5.3"
 core-ktx = "1.10.1"
@@ -17,11 +18,11 @@ okhttp = "4.7.2"
 retrofit = "2.9.0"
 retrofit-kotlinx-serialization = "1.0.0"
 # @keep
-compile-sdk = "33"
+compile-sdk = "34"
 # @keep
 min-sdk = "26"
 # @keep
-target-sdk = "33"
+target-sdk = "34"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
@@ -44,6 +45,7 @@ hilt-gradle = { group = "com.google.dagger", name = "hilt-android-gradle-plugin"
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation-compose" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx-serialization" }

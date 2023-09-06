@@ -19,7 +19,10 @@ class MainViewModel @Inject constructor(
 
     private val _typicodePosts: MutableStateFlow<List<Post>?> = MutableStateFlow(null)
     val typicodePosts: StateFlow<List<Post>?>
-        get() = _typicodePosts.asStateFlow()
+        get() {
+            fetchPosts()
+            return _typicodePosts.asStateFlow()
+        }
 
     fun fetchPosts() {
         viewModelScope.launch {
