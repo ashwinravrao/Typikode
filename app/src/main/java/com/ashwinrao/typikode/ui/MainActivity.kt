@@ -65,7 +65,28 @@ fun PostListPreview() {
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center,
             ) {
-                Greeting(name = "Android")
+                val posts = listOf(
+                    Post(
+                        id = 0,
+                        userId = 0,
+                        title = "Ea debitis aperiam",
+                        body = "Lorem ipsum dolor sit amet. Sed doloribus consectetur id rerum tenetur id odit natus qui voluptatibus nihil non provident illo? Sed quas molestiae quo nostrum consectetur et cumque iste.",
+                    ),
+                    Post(
+                        id = 1,
+                        userId = 1,
+                        title = "Ea repellendus alias",
+                        body = "Et sunt odio quo soluta dolorem aut reiciendis repellat a error sunt sit harum rerum et nulla itaque.",
+                    ),
+                    Post(
+                        id = 2,
+                        userId = 1,
+                        title = "Aut quae tenetur",
+                        body = "Nam voluptatem alias aut voluptatum ducimus id omnis fugit sed autem molestiae et veniam earum eos blanditiis mollitia.",
+                    )
+                )
+
+                PostList(posts)
             }
         }
     }
