@@ -24,12 +24,11 @@ class MainViewModel @Inject constructor(
             return _typicodePosts.asStateFlow()
         }
 
-    fun fetchPosts() {
+    fun fetchPosts() { // keep public for pull to refresh
         viewModelScope.launch {
             fetchPostsUseCase().collectLatest {
                 _typicodePosts.emit(it)
             }
         }
     }
-
 }

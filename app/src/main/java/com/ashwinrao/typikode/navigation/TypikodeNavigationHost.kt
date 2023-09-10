@@ -17,5 +17,6 @@ fun TypikodeNavigationHost(
         startDestination = homeNavigationRoute
     ) {
         homeScreen()
+        // add other destinations here...
     }
 }
