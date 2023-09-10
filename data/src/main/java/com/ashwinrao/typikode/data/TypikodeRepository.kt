@@ -6,12 +6,16 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class TypicodeRepository @Inject constructor(
+class TypikodeRepository @Inject constructor(
     private val service: TypicodeService
-) {
+) : TypikodePostRepository {
 
-    fun fetchPosts(): Flow<List<Post>> = flow {
+    override fun fetchPosts(): Flow<List<Post>> = flow {
         emit(service.fetchPosts())
     }
 
+}
+
+interface TypikodePostRepository {
+    fun fetchPosts(): Flow<List<Post>>
 }
